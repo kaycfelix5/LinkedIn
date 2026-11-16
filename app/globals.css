@@ -1,0 +1,1022 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+  --background: #000000;
+  --card: #1c2428;
+  --card-secondary: #222a2e;
+  --text: #e7e9eb;
+  --secondary: #a6a9ac;
+  --blue: #70b7f9;
+  --border: #858b8f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.linkedin-page {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+
+/* ========================================
+   BARRA DE NAVEGAÇÃO
+======================================== */
+
+.topbar {
+  width: calc(100% - 110px);
+  min-height: 60px;
+  background: var(--card);
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-content {
+  max-width: 1276px;
+  width: calc(100% - 30px);
+  min-height: 60px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linkedin-logo {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  background: #f2f4f5;
+  color: #14191c;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 3px;
+}
+
+.search-area {
+  height: 40px;
+  width: 320px;
+  flex-shrink: 0;
+  background: #38434f;
+  color: #f1f3f4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.search-area input {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.search-area input::placeholder {
+  color: #e0e3e6;
+}
+
+.navigation {
+  flex: 1;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.nav-link {
+  height: 60px;
+  min-width: 69px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: none;
+  color: #f0f1f2;
+  border: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--blue);
+}
+
+.nav-link span {
+  font-size: 14px;
+}
+
+.solutions {
+  border-left: 1px solid #747b80;
+  padding-left: 18px;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 100%;
+  background: transparent;
+}
+
+
+/* ========================================
+   AVISO DE INTERAÇÃO
+======================================== */
+
+.notice {
+  position: fixed;
+  z-index: 200;
+  right: 25px;
+  top: 75px;
+  max-width: 370px;
+  background: #29353c;
+  border: 1px solid #56626a;
+  border-radius: 9px;
+  padding: 15px 17px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.notice button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 23px;
+}
+
+
+/* ========================================
+   ESTRUTURA PRINCIPAL
+======================================== */
+
+.page-layout {
+  width: min(1296px, calc(100% - 32px));
+  margin: 26px auto 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.44fr) minmax(300px, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+
+/* ========================================
+   CARTÃO DO PERFIL
+======================================== */
+
+.profile-card {
+  width: 100%;
+  background: var(--card);
+  overflow: hidden;
+  border-radius: 19px;
+}
+
+.profile-cover {
+  height: 263px;
+  width: 100%;
+  background:
+    linear-gradient(
+      rgba(20, 23, 31, 0.14),
+      rgba(20, 23, 31, 0.20)
+    ),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1500")
+    center 47% / cover no-repeat;
+}
+
+.profile-info {
+  position: relative;
+  padding: 64px 28px 27px;
+  min-height: 272px;
+}
+
+.profile-picture {
+  position: absolute;
+  width: 181px;
+  height: 181px;
+  top: -126px;
+  left: 28px;
+  border-radius: 50%;
+  border: 5px solid var(--card);
+  object-fit: cover;
+  background: #26333a;
+}
+
+.profile-data {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 20px;
+}
+
+.profile-main h1 {
+  font-size: 27px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.job-title {
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.hashtags {
+  color: var(--secondary);
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.location {
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.location a {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.location a:hover,
+.followers:hover,
+.follower-link:hover {
+  text-decoration: underline;
+}
+
+.followers {
+  color: var(--blue);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.profile-buttons button {
+  width: 147px;
+  height: 37px;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.message-button {
+  background: var(--blue);
+  color: #122333;
+  border: 1px solid var(--blue);
+}
+
+.message-button:hover {
+  background: #91c7fa;
+}
+
+.more-button {
+  background: transparent;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.more-button:hover {
+  background: #263e50;
+}
+
+
+/* EMPRESA E INSTITUIÇÃO */
+
+.profile-organizations {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 0;
+}
+
+.organization {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 39px;
+  font-size: 17px;
+}
+
+.organization-image {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.company-image {
+  background-image:
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=120");
+}
+
+.school-image {
+  background-image:
+    url("https://images.unsplash.com/photo-1562774053-701939374585?w=120");
+}
+
+
+/* ========================================
+   CARTÕES DE CONTEÚDO
+======================================== */
+
+.content-card {
+  width: 100%;
+  padding: 22px 27px;
+  border-radius: 19px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.content-card h2,
+.sidebar-card h2 {
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+
+/* ========================================
+   DESTAQUES
+======================================== */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.featured-post {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+
+.featured-description {
+  height: 63px;
+  padding: 13px 14px 8px;
+  overflow: hidden;
+}
+
+.featured-description span {
+  display: block;
+  color: var(--secondary);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.featured-description p {
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.featured-image {
+  height: 176px;
+  width: 100%;
+  overflow: hidden;
+  background: #31343b;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.featured-post:hover .featured-image img {
+  transform: scale(1.04);
+}
+
+.featured-post:nth-child(1) .featured-image img {
+  filter: hue-rotate(300deg) saturate(1.35) brightness(0.7);
+}
+
+.featured-post:nth-child(2) .featured-image img {
+  filter: saturate(0.55) brightness(0.75);
+}
+
+.featured-post:nth-child(3) .featured-image img {
+  filter: hue-rotate(35deg) saturate(1.2) brightness(0.65);
+}
+
+.featured-footer {
+  height: 32px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+  font-size: 14px;
+}
+
+.reactions {
+  display: flex;
+  align-items: center;
+}
+
+.reaction {
+  width: 19px;
+  height: 19px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid var(--card);
+  margin-right: -6px;
+}
+
+.reaction.blue {
+  background: #42a5e9;
+}
+
+.reaction.green {
+  background: #4caf77;
+}
+
+.reaction.orange {
+  background: #e87850;
+  margin-right: 5px;
+}
+
+.reaction-number {
+  margin-left: 2px;
+  color: var(--secondary);
+}
+
+
+/* ========================================
+   ATIVIDADES
+======================================== */
+
+.activities {
+  padding-bottom: 18px;
+}
+
+.activities h2 {
+  margin-bottom: 2px;
+}
+
+.follower-link {
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.activity-list {
+  margin-top: 18px;
+}
+
+.activity-post {
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #7a8285;
+}
+
+.activity-post:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.activity-owner {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.activity-body {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.activity-body img {
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.activity-body p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #e7e9eb;
+}
+
+.activity-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  color: var(--secondary);
+  font-size: 14px;
+}
+
+
+/* ========================================
+   EXPERIÊNCIAS
+======================================== */
+
+.experiences {
+  padding: 21px 29px 26px;
+}
+
+.experiences h2 {
+  margin-bottom: 10px;
+}
+
+.experience-company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.experience-company img {
+  width: 57px;
+  height: 57px;
+  object-fit: cover;
+}
+
+.experience-company strong {
+  font-size: 18px;
+}
+
+.experience-company p {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-top: 3px;
+}
+
+.timeline {
+  margin-left: 12px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  min-height: 96px;
+}
+
+.timeline-marker {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.timeline-marker::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background: #a2a7aa;
+  top: 15px;
+  bottom: 0;
+}
+
+.timeline-item:last-child {
+  min-height: 0;
+}
+
+.timeline-item:last-child .timeline-marker::after {
+  display: none;
+}
+
+.timeline-marker span {
+  margin-top: 3px;
+  position: relative;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  background: #d7dadd;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  padding-bottom: 12px;
+}
+
+.timeline-content strong {
+  font-size: 17px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.experience-type {
+  color: #e7e9eb;
+}
+
+.experience-period,
+.experience-location {
+  color: var(--secondary);
+}
+
+
+/* ========================================
+   FORMAÇÃO ACADÊMICA
+======================================== */
+
+.education {
+  padding: 21px 29px 27px;
+}
+
+.education h2 {
+  margin-bottom: 13px;
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.education-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+}
+
+.education-item strong {
+  display: block;
+  font-size: 17px;
+}
+
+.education-item p {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.education-item span {
+  display: block;
+  font-size: 16px;
+  color: var(--secondary);
+  margin-top: 5px;
+}
+
+
+/* ========================================
+   IDIOMAS
+======================================== */
+
+.languages {
+  padding: 21px 29px 27px;
+}
+
+.languages h2 {
+  margin-bottom: 13px;
+}
+
+.language-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.language-item strong {
+  font-size: 17px;
+}
+
+.language-item span {
+  color: var(--secondary);
+  font-size: 16px;
+}
+
+.language-divider {
+  height: 1px;
+  background: #858b8f;
+  margin: 17px 0;
+}
+
+
+/* ========================================
+   LATERAL
+======================================== */
+
+.sidebar-card {
+  width: 100%;
+  background: var(--card);
+  border-radius: 19px;
+  padding: 17px 18px 19px;
+}
+
+.sidebar-card h2 {
+  font-size: 19px;
+  margin-bottom: 17px;
+}
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.person-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.person-photo {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.person-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-details strong {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.person-details p {
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.person-action {
+  min-height: 33px;
+  padding: 3px 17px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #d3d7da;
+  border-radius: 25px;
+  color: white;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.person-action:hover {
+  background: #303b42;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .topbar {
+    width: 100%;
+  }
+
+  .topbar-content {
+    width: calc(100% - 32px);
+  }
+
+  .navigation {
+    gap: 5px;
+  }
+
+  .search-area {
+    width: 220px;
+  }
+
+  .page-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(270px, 1fr);
+    gap: 17px;
+  }
+
+  .profile-data {
+    grid-template-columns: minmax(0, 1fr) 210px;
+    gap: 12px;
+  }
+
+  .featured-grid {
+    gap: 9px;
+  }
+
+  .content-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - CELULAR
+======================================== */
+
+@media (max-width: 760px) {
+
+  .topbar-content {
+    justify-content: space-between;
+  }
+
+  .search-area {
+    flex: 1;
+    width: auto;
+  }
+
+  .navigation {
+    flex: 0;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-link:first-child,
+  .nav-link:nth-child(2) {
+    display: flex;
+    min-width: 31px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .solutions,
+  .topbar-divider {
+    display: none;
+  }
+
+  .page-layout {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    margin-top: 14px;
+    gap: 12px;
+  }
+
+  .main-content,
+  .sidebar {
+    width: 100%;
+  }
+
+  .profile-cover {
+    height: 180px;
+  }
+
+  .profile-info {
+    padding: 61px 17px 22px;
+  }
+
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+    top: -92px;
+    left: 17px;
+  }
+
+  .profile-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-main h1 {
+    font-size: 23px;
+  }
+
+  .profile-organizations {
+    padding-top: 9px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .featured-image {
+    height: 180px;
+  }
+
+  .sidebar-card {
+    padding: 18px;
+  }
+
+  .activities,
+  .experiences,
+  .education,
+  .languages {
+    padding: 18px;
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - TELAS PEQUENAS
+======================================== */
+
+@media (max-width: 400px) {
+
+  .linkedin-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 28px;
+  }
+
+  .search-area {
+    height: 35px;
+  }
+
+  .search-area input {
+    font-size: 13px;
+  }
+
+  .profile-buttons button {
+    width: 50%;
+  }
+
+  .activity-body img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .activity-body p {
+    font-size: 14px;
+  }
+
+}
