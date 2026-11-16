@@ -2,8 +2,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Meu Perfil | LinkedIn",
-  description: "Clone de uma página de perfil do LinkedIn desenvolvido com Next.js.",
+  title: "NEXO | Rede Profissional",
+  description: "Conecte ideias. Construa oportunidades.",
 };
 
 export default function RootLayout({ children }) {
